@@ -451,43 +451,49 @@ h1, h2, h3, h4, h5,
 						}
 					}
 				}
-				.one-forth{
-					width: 50%;
+				.one-forth {
+					width: 100%; /* Full width */
 					position: relative;
-					@include media-breakpoint-up(md){
+					display: flex;
+					justify-content: center; /* Horizontally center */
+					align-items: center; /* Vertically center */
+					
+					@include media-breakpoint-up(md) {
 						position: absolute;
 						top: 0;
 						left: 0;
-						bottom: 0;
 						right: 0;
-						width: 1200px;
+						bottom: 0;
+						width: 100%;
 						margin: 0 auto;
 					}
-					@include media-breakpoint-down(md){
-						width: 100%;
+				
+					@include media-breakpoint-down(md) {
 						position: absolute;
 						top: 0;
 						left: 0;
 						right: 0;
 						bottom: 0;
+						width: 100%;
 						z-index: 1;
 						padding: 1em;
 					}
-					.text{
-						width: 100%;
-						@include media-breakpoint-up(lg){
-							position: absolute;
-							top: 50%;
-							left: 0;
-							transform: translateY(-50%);
-							right: 0;
-							// width: 1200px;
-							max-width: 50%;
-							padding-left: 45px;
-							padding-right: 3em;
+					
+					.text {
+						text-align: center; /* Center the text itself */
+						width: auto;
+						
+						@include media-breakpoint-up(lg) {
+							max-width: 100%; /* Ensure the text can take full space */
+							padding-left: 0;
+							padding-right: 0;
 						}
 					}
 				}
+				
+				
+				
+				
 				// .icon-video{
 				// 	position: absolute;
 				// 	top: 120px;
