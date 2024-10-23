@@ -17,15 +17,22 @@
   });
 
 
-	var fullHeight = function() {
+  var fullHeight = function() {
+    if ($(window).width() > 767) {  // Only apply for larger screens
+        $('.js-fullheight').css('height', $(window).height());
+        $(window).resize(function() {
+            if ($(window).width() > 767) {
+                $('.js-fullheight').css('height', $(window).height());
+            } else {
+                $('.js-fullheight').css('height', 'auto');  // Allow auto height on mobile
+            }
+        });
+    } else {
+        $('.js-fullheight').css('height', 'auto');  // Set height to auto on mobile initially
+    }
+};
+fullHeight();
 
-		$('.js-fullheight').css('height', $(window).height());
-		$(window).resize(function(){
-			$('.js-fullheight').css('height', $(window).height());
-		});
-
-	};
-	fullHeight();
 
 	// loader
 	var loader = function() {
