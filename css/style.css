@@ -6624,7 +6624,8 @@ button.bg-dark:focus {
 
 .mt-4,
 .my-4 {
-  margin-top: 1.5rem !important; }
+  margin-top: 1.5rem !important;
+  min-height: 120px; }
 
 .mr-4,
 .mx-4 {
@@ -8802,7 +8803,12 @@ h1, h2, h3, h4, h5,
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
-  border-radius: 5px; }
+  border-radius: 5px;
+  flex: 1 1 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 50%; }
   .resume-wrap .date {
     font-weight: 900;
     font-size: 26px;
